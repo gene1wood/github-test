@@ -52,3 +52,4 @@ define couchbase::instance($master, $ram, $password) {
     }
 
 }
+# here's my code that makes couchbase auto heal itself
