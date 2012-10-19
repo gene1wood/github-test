@@ -50,6 +50,8 @@ define couchbase::instance($master, $ram, $password) {
         require   => Service['couchbase-server'],
         creates   => '/root/.couchbase_cluster_join';
     }
-
+    file {
+        content => "foo"
+    }
 }
 # here's my code that makes couchbase auto heal itself
