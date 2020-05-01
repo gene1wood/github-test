@@ -1,5 +1,7 @@
 from setuptools import setup
 
+# a comment
+
 setup(
     name='github-actions-build-release-test',
     version='0.1',
