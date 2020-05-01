@@ -1,0 +1,20 @@
+name: Build and Deploy Python Package
+on:
+  push:
+    tags:
+      - 'v*'  # Run when "v*" version tags are created like "v1.0.0"
+jobs:
+  release:
+    name: Build and Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build
+        run: python setup.py sdist bdist_wheel  # Add "--universal" to the end if the package runs in both Python 2 and Python 3
+      - name: Publish a Python distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: __token__
+          password: ${{ secrets.TEST_PYPI_PASSWORD }}
+          repository_url: https://test.pypi.org/legacy/
