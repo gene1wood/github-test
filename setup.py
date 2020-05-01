@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='github-actions-build-release-test',
-    version='0.1',
+    version='0.2',
     license='BSD',
     author='Gene',
     author_email='test@example.com',
