@@ -14,7 +14,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Build
-      run: python3 setup.py sdist bdist_wheel  # Add "--universal" to the end if the package runs in both Python 2 and Python 3
+      run: python3 setup.py sdist bdist_wheel --universal  # Add "--universal" to the end if the package runs in both Python 2 and Python 3
     - name: Publish a Python distribution to PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
